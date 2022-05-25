@@ -5,11 +5,13 @@
 
 using namespace std;
 
-// Две доски
+
+
+// Two tables
 char fieldP1[10][10];
 char fieldP2[10][10];
 
-//Заполняем поле ратования или же обновляем
+// Filling and renew
 void FieldFill() {
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 10; j++) {
@@ -18,7 +20,7 @@ void FieldFill() {
 		}
 	}
 }
-//Выводи поле 
+// Drawing table
 void DrawField(char(*field)[10]) {
 	cout << "    ";
 	for (int i = 0; i < 10; i++) {
@@ -36,7 +38,7 @@ void DrawField(char(*field)[10]) {
 	cout << endl << endl;
 }
 
-//Продуцируем аттаку
+// To attack
 void Attack(int x, int y, char(*field)[10]) {
 	system("cls");
 	if (field[y][x] == 'o') {
