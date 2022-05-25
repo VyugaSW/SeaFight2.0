@@ -2,8 +2,8 @@
 #include <Windows.h>
 #include "Tablle.h"
 
-
 using namespace std;
+
 // - o - пустая клетка 
 // - * - клетка затронутая ядром
 // - + - причастность к клетке корабля
