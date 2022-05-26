@@ -114,7 +114,8 @@ void ShipRankingOnField(char(*field)[10]) {
                 && field[i1 - 1][j1] == 'o' && field[i1 + 1][j1 + 1] == 'o'
                 && field[i1][j1 + 1] == 'o' && field[i1 + 1][j1] == 'o'
                 && field[i1 - 1][j1] == 'o'
-                && field[i1 + 1][j1 - 1] == 'o' && field[i1 - 1][j1 + 1] == 'o') {
+                && field[i1 + 1][j1 - 1] == 'o' && field[i1 - 1][j1 + 1] == 'o'
+                && field[i][j] != '+') {
                 field[i][j] = '+';
                 field[i1][j1] = '+';
                 k++;
@@ -134,7 +135,8 @@ void ShipRankingOnField(char(*field)[10]) {
                 && field[i1 - 1][j1] == 'o' && field[i1 + 1][j1 + 1] == 'o'
                 && field[i1][j1 + 1] == 'o' && field[i1 + 1][j1] == 'o'
                 && field[i1][j1 - 1] == 'o'
-                && field[i1 + 1][j1 - 1] == 'o' && field[i1 - 1][j1 + 1] == 'o') {
+                && field[i1 + 1][j1 - 1] == 'o' && field[i1 - 1][j1 + 1] == 'o'
+                && field[i][j] != '+') {
                 field[i][j] = '+';
                 field[i1][j1] = '+';
                 k++;
@@ -149,10 +151,12 @@ void ShipRankingOnField(char(*field)[10]) {
     while (k < 4) {
         i = rand() % 10;
         j = rand() % 10;
+
         if (field[i - 1][j - 1] == 'o' && field[i + 1][j + 1] == 'o'
             && field[i][j + 1] == 'o' && field[i][j - 1] == 'o'
             && field[i + 1][j] == 'o' && field[i - 1][j] == 'o'
-            && field[i + 1][j - 1] == 'o' && field[i - 1][j + 1] == 'o') {
+            && field[i + 1][j - 1] == 'o' && field[i - 1][j + 1] == 'o'
+            && field[i][j] != '+') {
             field[i][j] = '+';
             k++;
         }
