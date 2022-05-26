@@ -19,12 +19,14 @@ bool flag = true;
 //Расставляем корабли на поле
 void ShipRankingOnField(char(*field)[10]) {
     srand(time(NULL));
+    Sleep(rand() % 1000);
     int i, j;
     int j1, i1;
     int k;
     int s;
     // Четырёхпалубный
     s = rand() % 2;
+    Sleep(rand() % 1000);
 
     // Горизонтально
     if (s) {
@@ -57,7 +59,7 @@ void ShipRankingOnField(char(*field)[10]) {
             j1 = j + 2;
             i1 = i;
             if (field[i - 1][j - 1] == 'o' && field[i + 1][j + 1] == 'o'
-                && field[i][j - 1] == 'o'
+                && field[i][j - 1] == 'o' && field[i][j+1] == 'o'
                 && field[i + 1][j - 1] == 'o' && field[i - 1][j + 1] == 'o'
                 && field[i + 1][j] == 'o' && field[i - 1][j] == 'o'
                 && field[i1 - 1][j1] == 'o' && field[i1 + 1][j1 + 1] == 'o'
@@ -208,7 +210,7 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    
+
 
     char f;
 
@@ -227,12 +229,12 @@ int main()
         while (flag) {
             StepPlayer1();
             StepPlayer2();
-            WinCheck(fieldP2,"Игрока 1");
-            WinCheck(fieldP1,"Игрока 2");
+            WinCheck(fieldP2, "Игрока 1");
+            WinCheck(fieldP1, "Игрока 2");
         }
     }
     else {
-        cout << "Good Bye, о необходимость";
+        cout << "Good Bye=";
     }
 
 
