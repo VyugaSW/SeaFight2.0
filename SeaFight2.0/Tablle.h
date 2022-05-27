@@ -5,6 +5,9 @@
 
 using namespace std;
 
+void StepPlayer1();
+void StepPlayer2();
+
 
 
 // Two tables
@@ -44,6 +47,24 @@ void Attack(int x, int y, char(*field)[10]) {
 	if (field[y][x] == 'o') {
 		cout << endl << "\tПустая клетка\n";
 		field[y][x] = '*';
+	}
+	else if (field[y][x] == '*' || field[x][y] == '-') {
+		if (field == fieldP1) {
+			cout << "\tНельзя!\n";
+			cout << "Поле Игрока 1\n";
+			DrawField(fieldP1);
+			cout << "Поле игрока 2\n";
+			DrawField(fieldP2);
+			StepPlayer2();
+		}
+		else if (field == fieldP2) {
+			cout << "\tНельзя!\n";
+			cout << "Поле Игрока 1\n";
+			DrawField(fieldP1);
+			cout << "Поле игрока 2\n";
+			DrawField(fieldP2);
+			StepPlayer1();
+		}
 	}
 	else if (field[y][x] == '+') {
 		cout << endl << "\tБезоппозиционное попадние в часть вражеского корабля\n";
